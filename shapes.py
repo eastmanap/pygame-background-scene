@@ -66,12 +66,19 @@ def draw_background(surface):
     pygame.draw.rect(surface, hill_color, (0, ground_level, width, height * 0.25))
 
 def draw_cloud(surface, x, y, size):
-    cloud_color = (255, 255, 255)  # White clouds
+    cloud_color = colors.WHITE
     
-    # Draw overlapping circles to create a fluffy cloud effect
+    # Draw overlapping circles
     pygame.draw.circle(surface, cloud_color, (x, y), size)
     pygame.draw.circle(surface, cloud_color, (x + size // 2, y - size // 3), size * 0.8)
     pygame.draw.circle(surface, cloud_color, (x - size // 2, y - size // 3), size * 0.8)
     pygame.draw.circle(surface, cloud_color, (x + size // 3, y + size // 4), size * 0.6)
     pygame.draw.circle(surface, cloud_color, (x - size // 3, y + size // 4), size * 0.6)
 
+import pygame
+
+def draw_staircase(surface, x, y, step_size):
+    step_color = (125, 196, 235)  # sky color offset
+    
+    for i in range(8):  # 8 steps
+        pygame.draw.rect(surface, step_color, (x + i * step_size, y - i * step_size, step_size, step_size))
