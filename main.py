@@ -3,6 +3,7 @@ import sys
 import colors
 import config  # Import the config module
 import shapes
+import thayer_shapes
 
 def init_game():
     pygame.init()
@@ -52,6 +53,12 @@ def main():
 
         # House
         shapes.draw_house(screen, 520, 250, 100)
+
+        #amongus
+        amogus1 = thayer_shapes.draw_amongus(screen, colors.RED, 115 / .05, 445 / .05, .05)
+
+        for part in amogus1:
+            part.draw()
 
         # Trees
         shapes.draw_tree(screen, 100, 400, 150)
