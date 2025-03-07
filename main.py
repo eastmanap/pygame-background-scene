@@ -33,6 +33,9 @@ def main():
         # Hills
         shapes.draw_background(screen)
 
+        # Truman show
+        shapes.draw_staircase(screen, 180, 330, 5)
+
         # Cloud 1
         shapes.draw_cloud(screen, 100, 100, 25)
         shapes.draw_cloud(screen, 110, 120, 25)
